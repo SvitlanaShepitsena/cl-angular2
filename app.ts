@@ -6,14 +6,16 @@ import {Component, View, bootstrap} from 'angular2/angular2';
     selector: 'my-app'
 })
 @View({
-    template: '<h1>Hello {{ name }}</h1>'
+    template: '<h1>Hello {{ name }}</h1><div>I\'m {{age}} years old.</div>'
 })
 // Component controller
 class MyAppComponent {
-    name: string;
+    name:string;
+    age:number;
 
     constructor() {
         this.name = 'Alice';
+        this.age = 18;
     }
 }
 

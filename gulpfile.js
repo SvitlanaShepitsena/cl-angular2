@@ -19,6 +19,15 @@ gulp.task('serve',  function () {
     });
 
 
-    gulp.watch("./**/*.js", ['js-watch']);
+    gulp.watch(["./**/*.js","./**/*.html"], ['js-watch']);
+    gulp.watch(["./**/*.jade"], ['jade']);
 });
 
+
+gulp.task('jade', function () {
+    return gulp.src('./**/*.jade')
+        .pipe($.jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest('./'))
+})

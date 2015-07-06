@@ -12,20 +12,25 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 /// <reference path="typings/angular2/angular2.d.ts" />
 var angular2_1 = require('angular2/angular2');
 // Annotation section
-var MyAppComponent = (function () {
-    function MyAppComponent() {
-        this.name = 'Alice';
-        this.age = 18;
+var SvPromoterAdvantagesComponent = (function () {
+    function SvPromoterAdvantagesComponent() {
+        this.advantages = [
+            'managing all social networks posts in one place',
+            'save time for your business activity',
+            'save time for your business activity 2',
+            'have your services announced regularly'
+        ];
     }
-    MyAppComponent = __decorate([
+    SvPromoterAdvantagesComponent = __decorate([
         angular2_1.Component({
-            selector: 'my-app'
+            selector: 'sv-promoter-advantages'
         }),
         angular2_1.View({
-            template: '<h1>Hello {{ name }}</h1><div>I\'m {{age}} years old.</div>'
+            templateUrl: 'views/sv-promoter-advantages.html',
+            directives: [angular2_1.NgFor, angular2_1.NgIf]
         }), 
         __metadata('design:paramtypes', [])
-    ], MyAppComponent);
-    return MyAppComponent;
+    ], SvPromoterAdvantagesComponent);
+    return SvPromoterAdvantagesComponent;
 })();
-angular2_1.bootstrap(MyAppComponent);
+angular2_1.bootstrap(SvPromoterAdvantagesComponent);

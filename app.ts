@@ -1,22 +1,26 @@
 /// <reference path="typings/angular2/angular2.d.ts" />
-import {Component, View, bootstrap} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor,NgIf} from 'angular2/angular2';
 
 // Annotation section
 @Component({
-    selector: 'my-app'
+    selector: 'sv-promoter-advantages'
 })
 @View({
-    template: '<h1>Hello {{ name }}</h1><div>I\'m {{age}} years old.</div>'
+    templateUrl: 'views/sv-promoter-advantages.html',
+    directives:[NgFor,NgIf]
 })
 // Component controller
-class MyAppComponent {
-    name:string;
-    age:number;
+class SvPromoterAdvantagesComponent {
+    advantages:Array<string>;
 
     constructor() {
-        this.name = 'Alice';
-        this.age = 18;
+        this.advantages = [
+            'managing all social networks posts in one place',
+            'save time for your business activity',
+            'save time for your business activity 2',
+            'have your services announced regularly'
+        ]
     }
 }
 
-bootstrap(MyAppComponent);
+bootstrap(SvPromoterAdvantagesComponent);
